@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>羅東美睫芊光 Qianglow — Service Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@200;300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–cream: #f5f2ed;
+–warm-white: #faf8f5;
+–stone: #c8bfb0;
+–taupe: #8c7d6e;
+–dark: #2e2820;
+–mid: #5a4f44;
+–rule: rgba(140, 125, 110, 0.3);
+–rule-strong: rgba(140, 125, 110, 0.55);
+}
+
+html, body {
+height: 100%;
+background: var(–cream);
+color: var(–dark);
+font-family: ‘Noto Serif TC’, serif;
+font-weight: 300;
+-webkit-font-smoothing: antialiased;
+overflow-x: hidden;
+}
+
+/* ── layout ── */
+.shell {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+max-width: 480px;
+margin: 0 auto;
+padding: 0 0 80px;
+position: relative;
+}
+
+/* ── header ── */
+header {
+padding: 52px 36px 32px;
+border-bottom: 1px solid var(–rule-strong);
+}
+
+.brand-cn {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 13px;
+font-weight: 300;
+letter-spacing: 0.35em;
+color: var(–taupe);
+margin-bottom: 6px;
+}
+
+.brand-en {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 52px;
+font-weight: 300;
+letter-spacing: 0.04em;
+color: var(–dark);
+line-height: 1;
+margin-bottom: 10px;
+}
+
+.service-menu-label {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 10.5px;
+letter-spacing: 0.45em;
+color: var(–stone);
+text-transform: uppercase;
+}
+
+/* ── tab nav ── */
+nav {
+display: flex;
+padding: 0 36px;
+gap: 0;
+border-bottom: 1px solid var(–rule);
+margin-top: 24px;
+overflow-x: auto;
+scrollbar-width: none;
+}
+nav::-webkit-scrollbar { display: none; }
+
+.tab {
+flex-shrink: 0;
+font-family: ‘Noto Serif TC’, serif;
+font-size: 12px;
+font-weight: 300;
+letter-spacing: 0.18em;
+color: var(–taupe);
+padding: 14px 18px 13px;
+cursor: pointer;
+border-bottom: 1.5px solid transparent;
+margin-bottom: -1px;
+transition: color 0.25s, border-color 0.25s;
+white-space: nowrap;
+background: none;
+border-top: none;
+border-left: none;
+border-right: none;
+outline: none;
+}
+
+.tab:first-child { padding-left: 0; }
+
+.tab.active {
+color: var(–dark);
+border-bottom-color: var(–mid);
+}
+
+.tab:hover:not(.active) { color: var(–mid); }
+
+/* ── panels ── */
+.panel {
+display: none;
+padding: 40px 36px 0;
+animation: fadeUp 0.35s ease both;
+}
+
+.panel.active { display: block; }
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(8px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── section heading ── */
+.section-heading {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 13px;
+font-weight: 300;
+letter-spacing: 0.28em;
+color: var(–mid);
+margin-bottom: 22px;
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.section-heading::after {
+content: ‘’;
+flex: 1;
+height: 1px;
+background: var(–rule-strong);
+}
+
+/* ── service rows ── */
+.service-group {
+margin-bottom: 36px;
+}
+
+.service-group + .service-group {
+padding-top: 36px;
+border-top: 1px solid var(–rule);
+}
+
+.row {
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+gap: 12px;
+padding: 11px 0;
+border-bottom: 1px solid var(–rule);
+}
+
+.row:last-child { border-bottom: none; }
+
+.row-name {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 14px;
+font-weight: 300;
+letter-spacing: 0.12em;
+color: var(–dark);
+flex: 1;
+}
+
+.row-note {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 11px;
+letter-spacing: 0.08em;
+color: var(–taupe);
+margin-top: 3px;
+display: block;
+}
+
+.row-price {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 15px;
+font-weight: 400;
+letter-spacing: 0.06em;
+color: var(–mid);
+white-space: nowrap;
+flex-shrink: 0;
+}
+
+.row-price.complimentary {
+font-style: italic;
+font-size: 13px;
+color: var(–taupe);
+}
+
+.price-prefix {
+font-size: 11px;
+letter-spacing: 0.08em;
+vertical-align: super;
+margin-right: 1px;
+}
+
+/* ── footer ── */
+footer {
+margin-top: 52px;
+padding: 36px 36px 0;
+text-align: center;
+border-top: 1px solid var(–rule);
+}
+
+.footer-diamond {
+font-size: 10px;
+color: var(–stone);
+margin-bottom: 16px;
+display: block;
+}
+
+.footer-tagline {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 12px;
+font-weight: 300;
+letter-spacing: 0.22em;
+color: var(–taupe);
+line-height: 1.9;
+margin-bottom: 14px;
+}
+
+.footer-date {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 12px;
+letter-spacing: 0.3em;
+color: var(–stone);
+margin-bottom: 18px;
+}
+
+.footer-contact {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 11.5px;
+font-weight: 300;
+letter-spacing: 0.15em;
+color: var(–taupe);
+line-height: 2;
+}
+
+.footer-contact strong {
+color: var(–mid);
+font-weight: 400;
+}
+
+/* ── mobile bottom nav ── */
+.bottom-bar {
+display: none;
+}
+
+@media (max-width: 520px) {
+header { padding: 40px 28px 26px; }
+.brand-en { font-size: 44px; }
+nav { padding: 0 28px; }
+.tab { padding: 12px 14px 11px; font-size: 11.5px; }
+.tab:first-child { padding-left: 0; }
+.panel { padding: 32px 28px 0; }
+footer { padding: 36px 28px 0; }
+}
+
+/* subtle paper texture via pseudo */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘300’ height=‘300’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.75’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘300’ height=‘300’ filter=‘url(%23n)’ opacity=‘0.022’/%3E%3C/svg%3E”);
+pointer-events: none;
+z-index: 0;
+}
+
+.shell { position: relative; z-index: 1; }
+</style>
+
+</head>
+<body>
+
+<div class="shell">
+
+  <header>
+    <p class="brand-cn">羅 東 美 睫 芊 光</p>
+    <h1 class="brand-en">Qianglow</h1>
+    <p class="service-menu-label">Service &nbsp; Menu</p>
+  </header>
+
+  <nav id="tabNav">
+    <button class="tab active" data-panel="lash">日系美睫</button>
+    <button class="tab" data-panel="removal">卸除</button>
+    <button class="tab" data-panel="care">睫毛管理</button>
+    <button class="tab" data-panel="addon">加購項目</button>
+  </nav>
+
+  <!-- panel: lash -->
+
+  <div class="panel active" id="panel-lash">
+    <div class="section-heading">日系單根美睫</div>
+    <div class="service-group">
+      <div class="row">
+        <div class="row-name">裸妝素顏款</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>1,000</div>
+      </div>
+      <div class="row">
+        <div class="row-name">日常自然款</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>1,100</div>
+      </div>
+      <div class="row">
+        <div class="row-name">立體顯眼款</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>1,200</div>
+      </div>
+      <div class="row">
+        <div class="row-name">濃郁存在款</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>1,300</div>
+      </div>
+    </div>
+
+```
+<footer>
+  <span class="footer-diamond">◇</span>
+  <p class="footer-tagline">以睫毛為筆　描繪屬於你的輪廓之美</p>
+  <p class="footer-date">2026 年 6 月 1 日　正式啟動</p>
+  <p class="footer-contact">
+    預約請加入 LINE &nbsp;<strong>@924pugwt</strong><br>
+    更多作品請見 IG &nbsp;<strong>qianglow.studio</strong>
+  </p>
+</footer>
+```
+
+  </div>
+
+  <!-- panel: removal -->
+
+  <div class="panel" id="panel-removal">
+    <div class="section-heading">卸除</div>
+    <div class="service-group">
+      <div class="row">
+        <div class="row-name">本店續接</div>
+        <div class="row-price complimentary">Complimentary</div>
+      </div>
+      <div class="row">
+        <div class="row-name">他店續接</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>200</div>
+      </div>
+    </div>
+
+```
+<footer>
+  <span class="footer-diamond">◇</span>
+  <p class="footer-tagline">以睫毛為筆　描繪屬於你的輪廓之美</p>
+  <p class="footer-date">2026 年 6 月 1 日　正式啟動</p>
+  <p class="footer-contact">
+    預約請加入 LINE &nbsp;<strong>@924pugwt</strong><br>
+    更多作品請見 IG &nbsp;<strong>qianglow.studio</strong>
+  </p>
+</footer>
+```
+
+  </div>
+
+  <!-- panel: care -->
+
+  <div class="panel" id="panel-care">
+    <div class="section-heading">睫毛管理</div>
+    <div class="service-group">
+      <div class="row">
+        <div class="row-name">水光睫毛管理</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>1,300</div>
+      </div>
+      <div class="row">
+        <div class="row-name">野生眉雕塑</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>1,000</div>
+      </div>
+    </div>
+
+```
+<footer>
+  <span class="footer-diamond">◇</span>
+  <p class="footer-tagline">以睫毛為筆　描繪屬於你的輪廓之美</p>
+  <p class="footer-date">2026 年 6 月 1 日　正式啟動</p>
+  <p class="footer-contact">
+    預約請加入 LINE &nbsp;<strong>@924pugwt</strong><br>
+    更多作品請見 IG &nbsp;<strong>qianglow.studio</strong>
+  </p>
+</footer>
+```
+
+  </div>
+
+  <!-- panel: addon -->
+
+  <div class="panel" id="panel-addon">
+    <div class="section-heading">加購項目</div>
+    <div class="service-group">
+      <div class="row">
+        <div class="row-name">野生眉雕塑</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>800</div>
+      </div>
+      <div class="row">
+        <div class="row-name">局部彩睫</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>100</div>
+      </div>
+      <div class="row">
+        <div class="row-name">全眼彩睫</div>
+        <div class="row-price"><span class="price-prefix">NT$</span>200</div>
+      </div>
+    </div>
+
+```
+<footer>
+  <span class="footer-diamond">◇</span>
+  <p class="footer-tagline">以睫毛為筆　描繪屬於你的輪廓之美</p>
+  <p class="footer-date">2026 年 6 月 1 日　正式啟動</p>
+  <p class="footer-contact">
+    預約請加入 LINE &nbsp;<strong>@924pugwt</strong><br>
+    更多作品請見 IG &nbsp;<strong>qianglow.studio</strong>
+  </p>
+</footer>
+```
+
+  </div>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.panel;
+
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      document.getElementById('panel-' + target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
