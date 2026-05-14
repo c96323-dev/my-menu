@@ -345,6 +345,64 @@ body{
   .fit-list{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
 }
+  .map-button-wrap{
+  margin-top:22px;
+  text-align:center;
+}
+
+.map-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 28px;
+  border-radius:999px;
+  background:#342a22;
+  color:#fff;
+  text-decoration:none;
+  letter-spacing:.16em;
+  font-size:12px;
+  transition:.25s;
+}
+
+.map-button:hover{
+  opacity:.88;
+}
+
+.instagram-card{
+  padding:52px 28px;
+  border:1px solid var(--line);
+  border-radius:32px;
+  background:rgba(255,255,255,.55);
+  text-align:center;
+}
+
+.instagram-text{
+  color:var(--sub);
+  font-size:14px;
+  line-height:2.1;
+  margin-bottom:26px;
+}
+
+.instagram-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 34px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--line);
+  text-decoration:none;
+  color:var(--text);
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+  letter-spacing:.08em;
+  transition:.25s;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.instagram-button:hover{
+  transform:translateY(-2px);
+}
 </style>
 </head>
 <body>
@@ -477,18 +535,31 @@ body{
   <div class="section-title">Google 地圖</div>
   <div class="map-wrap">
   <iframe src="https://www.google.com/maps?q=宜蘭縣羅東鎮安平路35號&output=embed" loading="lazy"></iframe>
-    <a class="ig-link" href="https://maps.app.goo.gl/6VkabM9q2Lr9Zyg3A?g_st=ic" target="_blank">
-  開啟 Google 地圖
-</a>
+ <div class="map-button-wrap">
+  <a class="map-button" href="https://maps.app.goo.gl/6VkabM9q2Lr9Zyg3A?g_st=ic" target="_blank">
+    查看 Google 地圖
+  </a>
+</div>
   </div>
 </section>
 <section class="section" id="ig">
   <div class="section-title">Instagram</div>
-  <div class="ig-box">
-    <p>更多作品、日常紀錄與預約資訊，歡迎到 Instagram 看看芊光 Studio。</p>
-    <a class="ig-link" href="https://www.instagram.com/qianglow.studio?igsh=dDNobW11bDV2NW9m&utm_source=qr" target="_blank">
-      前往 @qianglow.studio
+
+  <div class="instagram-card">
+
+    <p class="instagram-text">
+      更多作品、日常紀錄與預約資訊<br>
+      歡迎來到芊光 Studio
+    </p>
+
+    <a class="instagram-button"
+      href="https://www.instagram.com/qianglow.studio?igsh=dDNobW11bDV2NW9m&utm_source=qr"
+      target="_blank">
+
+      @qianglow.studio
+
     </a>
+
   </div>
 </section>
 <section class="section">
