@@ -187,132 +187,57 @@ body{
   grid-template-columns:repeat(3,1fr);
   gap:22px;
 }
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
 
 .review-card{
-  background:rgba(255,255,255,0.55);
+  background:rgba(255,255,255,0.58);
   border:1px solid var(--line);
-  border-radius:26px;
-  overflow:hidden;
+  border-radius:24px;
+  padding:28px;
 }
 
-.review-image{
-  width:100%;
-  aspect-ratio:1/1;
+.review-top{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.review-avatar{
+  width:72px;
+  height:72px;
+  border-radius:999px;
   object-fit:cover;
-  display:block;
-}
-
-.review-content{
-  padding:24px;
+  flex-shrink:0;
 }
 
 .stars{
-  color:#c8a96b;
-  font-size:15px;
-  letter-spacing:0.12em;
-  margin-bottom:14px;
-}
-
-.review-content p{
+  color:#c9a86a;
   font-size:14px;
-  line-height:2;
-  margin-bottom:14px;
+  letter-spacing:0.12em;
+  margin-bottom:6px;
 }
 
-.review-content span{
+.review-name{
   font-size:12px;
   color:var(--sub);
   letter-spacing:0.14em;
 }
 
-.about{
+.review-card p{
   font-size:14px;
-  color:var(--sub);
-  line-height:2.2;
-  max-width:760px;
-}
-
-.footer{
-  padding-top:42px;
-  border-top:1px solid var(--line);
-  text-align:center;
-}
-
-.footer-diamond{
-  color:#bcae9e;
-  margin-bottom:16px;
-}
-
-.footer-tagline{
-  font-size:13px;
-  color:var(--sub);
-  letter-spacing:0.2em;
-  margin-bottom:18px;
-}
-
-.footer-contact{
-  font-size:13px;
-  color:var(--sub);
   line-height:2;
-}
-
-.footer-contact strong{
   color:var(--text);
-}
-
-.booking-button{
-  position:fixed;
-  left:20px;
-  right:20px;
-  bottom:18px;
-  max-width:420px;
-  margin:auto;
-  background:var(--button);
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  padding:16px;
-  border-radius:999px;
-  font-size:14px;
-  letter-spacing:0.18em;
-  z-index:999;
-  box-shadow:0 14px 36px rgba(0,0,0,0.18);
 }
 
 @media(max-width:860px){
 
-  .hero{
-    grid-template-columns:1fr;
-  }
-
-  .hero-image{
-    min-height:auto;
-    height:500px;
-  }
-
-  .hero-content{
-    padding:42px 28px;
-  }
-
-  .brand-en{
-    font-size:52px;
-  }
-
-  .hero-title{
-    font-size:24px;
-  }
-
-  .content{
-    padding:42px 28px;
-  }
-
-  .menu-grid,
   .review-grid{
     grid-template-columns:1fr;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(2,1fr);
   }
 
 }
@@ -469,11 +394,30 @@ Japanese Lash ｜ Private Studio ｜ Luodong
 
 <div class="review-card">
 
-<img src="review-01.PNG" class="review-image">
-
-<div class="review-content">
-
+<div class="review-top">
+<img src="review-02.PNG" class="review-avatar">
+<div>
 <div class="stars">★★★★★</div>
+<span class="review-name">新手媽媽回饋</span>
+</div>
+</div>
+
+<p>
+生完小孩後每天都睡不飽，
+接完睫毛早上真的省很多時間。
+</p>
+
+</div>
+
+<div class="review-card">
+
+<div class="review-top">
+<img src="review-01.PNG" class="review-avatar">
+<div>
+<div class="stars">★★★★★</div>
+<span class="review-name">羅東客人分享</span>
+</div>
+</div>
 
 <p>
 第一次接睫毛很怕太濃，
@@ -481,38 +425,17 @@ Japanese Lash ｜ Private Studio ｜ Luodong
 素顏也看起來有精神。
 </p>
 
-<span>— 羅東客人分享</span>
-
-</div>
-
 </div>
 
 <div class="review-card">
 
-<img src="review-02.PNG" class="review-image">
-
-<div class="review-content">
-
+<div class="review-top">
+<img src="review-03.JPG" class="review-avatar">
+<div>
 <div class="stars">★★★★★</div>
-
-<p>
-生完小孩後每天都睡不飽，
-接完睫毛早上真的省很多時間。
-</p>
-
-<span>— 新手媽媽回饋</span>
-
+<span class="review-name">宜蘭客人推薦</span>
 </div>
-
 </div>
-
-<div class="review-card">
-
-<img src="review-03.JPG" class="review-image">
-
-<div class="review-content">
-
-<div class="stars">★★★★★</div>
 
 <p>
 環境很安靜舒服，
@@ -520,26 +443,9 @@ Japanese Lash ｜ Private Studio ｜ Luodong
 是會想再回訪的美睫工作室。
 </p>
 
-<span>— 宜蘭客人推薦</span>
-
 </div>
 
 </div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="section-title">關於芊光</div>
-
-<p class="about">
-如果妳正在找羅東美睫、宜蘭接睫毛、
-羅東日系美睫或羅東火車站附近的美睫工作室，
-芊光 Studio 以自然感、輕盈感與日常耐看為主要設計方向，
-適合喜歡乾淨妝感、希望素顏也能看起來更有精神的妳。
-</p>
 
 </section>
 
