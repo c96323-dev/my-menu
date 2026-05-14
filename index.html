@@ -10,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+TC:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -20,448 +20,403 @@
 }
 
 :root {
-  --cream: #f5f2ed;
-  --stone: #c8bfb0;
-  --taupe: #8c7d6e;
-  --dark: #2e2820;
-  --mid: #5a4f44;
-  --rule: rgba(140, 125, 110, 0.3);
-  --rule-strong: rgba(140, 125, 110, 0.55);
+  --bg: #f6f1ea;
+  --card: #fbf8f3;
+  --line: rgba(135, 118, 98, 0.22);
+  --line-dark: rgba(135, 118, 98, 0.42);
+  --text: #2f2922;
+  --sub: #8a7a69;
+  --soft: #b9aa98;
+  --btn: #342c24;
 }
 
 body {
-  background: var(--cream);
-  color: var(--dark);
+  background: var(--bg);
+  color: var(--text);
   font-family: "Noto Serif TC", serif;
   font-weight: 300;
-  overflow-x: hidden;
+  letter-spacing: 0.04em;
+  line-height: 1.9;
 }
 
-.shell {
-  max-width: 480px;
+.page {
+  max-width: 1080px;
   margin: 0 auto;
-  min-height: 100vh;
-  padding-bottom: 96px;
+  padding: 48px 20px 120px;
 }
 
-header {
-  padding: 52px 36px 32px;
-  border-bottom: 1px solid var(--rule-strong);
+.site-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(60, 45, 32, 0.08);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 620px;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-content {
+  padding: 72px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .brand-cn {
   font-size: 13px;
-  letter-spacing: 0.35em;
-  color: var(--taupe);
-  margin-bottom: 6px;
+  letter-spacing: 0.38em;
+  color: var(--sub);
+  margin-bottom: 8px;
 }
 
 .brand-en {
   font-family: "Cormorant Garamond", serif;
-  font-size: 52px;
+  font-size: 64px;
   font-weight: 300;
-  letter-spacing: 0.04em;
   line-height: 1;
-  margin-bottom: 10px;
-}
-
-.service-menu-label {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 10.5px;
-  letter-spacing: 0.45em;
-  color: var(--stone);
-  text-transform: uppercase;
-}
-
-.hero {
-  padding: 36px 36px 8px;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
 }
 
 .hero-title {
-  font-size: 20px;
+  font-size: 26px;
+  font-weight: 400;
   letter-spacing: 0.12em;
   line-height: 1.8;
-  color: var(--dark);
-  margin-bottom: 14px;
+  margin-bottom: 24px;
 }
 
 .hero-text {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  line-height: 2;
-  color: var(--taupe);
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 2.1;
+  margin-bottom: 32px;
 }
 
-nav {
-  display: flex;
-  padding: 0 36px;
-  border-bottom: 1px solid var(--rule);
-  margin-top: 24px;
-  overflow-x: auto;
-}
-
-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.tab {
-  flex-shrink: 0;
-  font-family: "Noto Serif TC", serif;
+.hero-note {
   font-size: 12px;
+  color: var(--soft);
   letter-spacing: 0.18em;
-  color: var(--taupe);
-  padding: 14px 18px 13px;
-  cursor: pointer;
-  border: none;
-  border-bottom: 1.5px solid transparent;
-  background: none;
-  white-space: nowrap;
 }
 
-.tab:first-child {
-  padding-left: 0;
+.content {
+  padding: 64px;
 }
 
-.tab.active {
-  color: var(--dark);
-  border-bottom-color: var(--mid);
+.section {
+  margin-bottom: 64px;
 }
 
-.panel {
-  display: none;
-  padding: 40px 36px 0;
-  animation: fadeUp 0.35s ease both;
-}
-
-.panel.active {
-  display: block;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.section-heading {
-  font-size: 13px;
-  letter-spacing: 0.28em;
-  color: var(--mid);
-  margin-bottom: 22px;
+.section-title {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: var(--text);
+  margin-bottom: 28px;
 }
 
-.section-heading::after {
+.section-title::after {
   content: "";
   flex: 1;
   height: 1px;
-  background: var(--rule-strong);
+  background: var(--line-dark);
 }
 
-.service-group {
-  margin-bottom: 36px;
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.menu-box {
+  border-top: 1px solid var(--line-dark);
+  padding-top: 24px;
+}
+
+.menu-subtitle {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--sub);
+  margin-bottom: 18px;
 }
 
 .row {
   display: flex;
-  align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.row:last-child {
-  border-bottom: none;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .row-name {
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  color: var(--dark);
+  font-size: 15px;
 }
 
 .row-price {
   font-family: "Cormorant Garamond", serif;
-  font-size: 15px;
-  letter-spacing: 0.06em;
-  color: var(--mid);
+  font-size: 18px;
   white-space: nowrap;
+  color: var(--sub);
 }
 
-.row-price.complimentary {
-  font-style: italic;
-  font-size: 13px;
-  color: var(--taupe);
-}
-
-.price-prefix {
-  font-size: 11px;
-  margin-right: 1px;
-}
-
-.reviews {
-  padding: 36px 36px 0;
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
 .review-card {
-  padding: 22px 0;
-  border-bottom: 1px solid var(--rule);
+  background: rgba(255,255,255,0.45);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 26px;
 }
 
 .review-card p {
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 14px;
+  color: var(--text);
   line-height: 2;
-  color: var(--dark);
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .review-card span {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--taupe);
-}
-
-.seo-area {
-  padding: 42px 36px 0;
-}
-
-.seo-area p {
   font-size: 12px;
-  letter-spacing: 0.08em;
-  line-height: 2;
-  color: var(--taupe);
+  color: var(--sub);
+  letter-spacing: 0.16em;
 }
 
-footer {
-  margin-top: 52px;
-  padding: 36px 36px 0;
+.about-text {
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 2.2;
+  max-width: 760px;
+}
+
+.footer {
   text-align: center;
-  border-top: 1px solid var(--rule);
+  padding-top: 42px;
+  border-top: 1px solid var(--line);
 }
 
 .footer-diamond {
-  font-size: 10px;
-  color: var(--stone);
-  margin-bottom: 16px;
-  display: block;
+  color: var(--soft);
+  font-size: 12px;
+  margin-bottom: 18px;
 }
 
 .footer-tagline {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.22em;
-  color: var(--taupe);
-  line-height: 1.9;
+  color: var(--sub);
   margin-bottom: 18px;
 }
 
 .footer-contact {
-  font-size: 11.5px;
-  letter-spacing: 0.15em;
-  color: var(--taupe);
+  font-size: 13px;
+  color: var(--sub);
   line-height: 2;
 }
 
 .footer-contact strong {
-  color: var(--mid);
+  color: var(--text);
   font-weight: 400;
 }
 
 .booking-button {
   position: fixed;
-  left: 24px;
-  right: 24px;
+  left: 20px;
+  right: 20px;
   bottom: 18px;
-  max-width: 432px;
+  max-width: 420px;
   margin: 0 auto;
-  background: var(--dark);
-  color: #fff;
+  background: var(--btn);
+  color: white;
   text-decoration: none;
   text-align: center;
-  padding: 15px 20px;
+  padding: 16px 24px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.18em;
   z-index: 99;
-  box-shadow: 0 10px 30px rgba(46, 40, 32, 0.18);
+  box-shadow: 0 12px 36px rgba(47, 41, 34, 0.25);
 }
 
-@media (max-width: 520px) {
-  header {
-    padding: 40px 28px 26px;
+@media (max-width: 760px) {
+  .page {
+    padding: 18px 12px 110px;
+  }
+
+  .site-card {
+    border-radius: 28px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-photo {
+    height: 430px;
+  }
+
+  .hero-content {
+    padding: 42px 28px 36px;
   }
 
   .brand-en {
-    font-size: 44px;
+    font-size: 48px;
   }
 
-  .hero,
-  .reviews,
-  .seo-area {
-    padding-left: 28px;
-    padding-right: 28px;
+  .hero-title {
+    font-size: 21px;
   }
 
-  nav {
-    padding: 0 28px;
+  .hero-text {
+    font-size: 13.5px;
   }
 
-  .tab {
-    padding: 12px 14px 11px;
-    font-size: 11.5px;
+  .content {
+    padding: 42px 28px;
   }
 
-  .panel {
-    padding: 32px 28px 0;
+  .menu-grid,
+  .review-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  footer {
-    padding: 36px 28px 0;
+  .section {
+    margin-bottom: 54px;
   }
-}
-  .hero-image-wrap {
-  padding: 24px 28px 0;
-}
 
-.hero-image {
-  width: 100%;
-  border-radius: 24px;
-  display: block;
-  object-fit: cover;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  .row-name {
+    font-size: 14px;
+  }
+
+  .row-price {
+    font-size: 17px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="shell">
+<div class="page">
+  <main class="site-card">
 
-<header>
-  <p class="brand-cn">羅 東 美 睫 芊 光</p>
-  <h1 class="brand-en">Qianglow</h1>
-  <p class="service-menu-label">Service Menu</p>
-</header>
-<section class="hero-image-wrap">
-  <img src="2FA2F8F8-EBB0-472A-8154-07B9512A9FE1.jpg" class="hero-image">
-</section>
-<section class="hero">
-  <h2 class="hero-title">自然感睫毛<br>讓素顏也看起來有精神</h2>
-  <p class="hero-text">
-    芊光 Studio 位於羅東火車站附近，採完全預約制，一對一服務。  
-    專注日系美睫、睫毛管理與野生眉雕塑，為妳打造自然、乾淨、耐看的眼神。
-  </p>
-</section>
+    <section class="hero">
+      <img src="2FA2F8F8-EBB0-472A-8154-07B9512A9FE1.jpg" alt="芊光 Studio 空間照" class="hero-photo">
 
-<nav>
-  <button class="tab active" data-panel="lash">日系美睫</button>
-  <button class="tab" data-panel="removal">卸除</button>
-  <button class="tab" data-panel="care">睫毛管理</button>
-  <button class="tab" data-panel="addon">加購項目</button>
-</nav>
+      <div class="hero-content">
+        <p class="brand-cn">羅 東 美 睫 芊 光</p>
+        <h1 class="brand-en">Qianglow</h1>
+        <h2 class="hero-title">自然感睫毛<br>讓素顏也看起來有精神</h2>
+        <p class="hero-text">
+          芊光 Studio 位於羅東火車站附近，採完全預約制，一對一服務。  
+          專注日系美睫、睫毛管理與野生眉雕塑，為妳打造自然、乾淨、耐看的眼神。
+        </p>
+        <p class="hero-note">Japanese Lash｜Private Studio｜Luodong</p>
+      </div>
+    </section>
 
-<div class="panel active" id="panel-lash">
-  <div class="section-heading">日系單根美睫</div>
-  <div class="service-group">
-    <div class="row"><div class="row-name">裸妝素顏款</div><div class="row-price"><span class="price-prefix">NT$</span>1,000</div></div>
-    <div class="row"><div class="row-name">日常自然款</div><div class="row-price"><span class="price-prefix">NT$</span>1,100</div></div>
-    <div class="row"><div class="row-name">立體顯眼款</div><div class="row-price"><span class="price-prefix">NT$</span>1,200</div></div>
-    <div class="row"><div class="row-name">濃郁存在款</div><div class="row-price"><span class="price-prefix">NT$</span>1,300</div></div>
-  </div>
+    <div class="content">
+
+      <section class="section">
+        <div class="section-title">服務價目</div>
+
+        <div class="menu-grid">
+          <div class="menu-box">
+            <div class="menu-subtitle">日系單根美睫</div>
+            <div class="row"><span class="row-name">裸妝素顏款</span><span class="row-price">NT$1,000</span></div>
+            <div class="row"><span class="row-name">日常自然款</span><span class="row-price">NT$1,100</span></div>
+            <div class="row"><span class="row-name">立體顯眼款</span><span class="row-price">NT$1,200</span></div>
+            <div class="row"><span class="row-name">濃郁存在款</span><span class="row-price">NT$1,300</span></div>
+          </div>
+
+          <div class="menu-box">
+            <div class="menu-subtitle">睫毛管理</div>
+            <div class="row"><span class="row-name">水光睫毛管理</span><span class="row-price">NT$1,300</span></div>
+            <div class="row"><span class="row-name">野生眉雕塑</span><span class="row-price">NT$1,000</span></div>
+          </div>
+
+          <div class="menu-box">
+            <div class="menu-subtitle">卸除</div>
+            <div class="row"><span class="row-name">本店續接</span><span class="row-price">Free</span></div>
+            <div class="row"><span class="row-name">他店續接</span><span class="row-price">NT$200</span></div>
+          </div>
+
+          <div class="menu-box">
+            <div class="menu-subtitle">加購項目</div>
+            <div class="row"><span class="row-name">野生眉雕塑</span><span class="row-price">NT$800</span></div>
+            <div class="row"><span class="row-name">局部彩睫</span><span class="row-price">NT$100</span></div>
+            <div class="row"><span class="row-name">全眼彩睫</span><span class="row-price">NT$200</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">客人好評推薦</div>
+
+        <div class="review-list">
+          <div class="review-card">
+            <p>第一次接睫毛很怕太濃，但芊光做出來很自然，素顏也看起來有精神。</p>
+            <span>— 羅東客人分享</span>
+          </div>
+
+          <div class="review-card">
+            <p>生完小孩後每天都睡不飽，接完睫毛早上真的省很多時間，整個人看起來比較亮。</p>
+            <span>— 新手媽媽回饋</span>
+          </div>
+
+          <div class="review-card">
+            <p>環境很安靜舒服，操作也很細心，不會有壓迫感，是會想再回訪的美睫工作室。</p>
+            <span>— 宜蘭客人推薦</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">關於芊光</div>
+        <p class="about-text">
+          如果妳正在找羅東美睫、宜蘭接睫毛、羅東日系美睫或羅東火車站附近的美睫工作室，
+          芊光 Studio 以自然感、輕盈感與日常耐看為主要設計方向。
+          適合喜歡乾淨妝感、想節省早晨化妝時間，
+          或希望素顏也能看起來更有精神的妳。
+        </p>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-diamond">◇</div>
+        <p class="footer-tagline">以睫毛為筆　描繪屬於妳的輪廓之美</p>
+        <p class="footer-contact">
+          預約請加入 LINE <strong>@924pugwt</strong><br>
+          更多作品請見 IG <strong>qianglow.studio</strong>
+        </p>
+      </footer>
+
+    </div>
+  </main>
 </div>
 
-<div class="panel" id="panel-removal">
-  <div class="section-heading">卸除</div>
-  <div class="service-group">
-    <div class="row"><div class="row-name">本店續接</div><div class="row-price complimentary">Complimentary</div></div>
-    <div class="row"><div class="row-name">他店續接</div><div class="row-price"><span class="price-prefix">NT$</span>200</div></div>
-  </div>
-</div>
-
-<div class="panel" id="panel-care">
-  <div class="section-heading">睫毛管理</div>
-  <div class="service-group">
-    <div class="row"><div class="row-name">水光睫毛管理</div><div class="row-price"><span class="price-prefix">NT$</span>1,300</div></div>
-    <div class="row"><div class="row-name">野生眉雕塑</div><div class="row-price"><span class="price-prefix">NT$</span>1,000</div></div>
-  </div>
-</div>
-
-<div class="panel" id="panel-addon">
-  <div class="section-heading">加購項目</div>
-  <div class="service-group">
-    <div class="row"><div class="row-name">野生眉雕塑</div><div class="row-price"><span class="price-prefix">NT$</span>800</div></div>
-    <div class="row"><div class="row-name">局部彩睫</div><div class="row-price"><span class="price-prefix">NT$</span>100</div></div>
-    <div class="row"><div class="row-name">全眼彩睫</div><div class="row-price"><span class="price-prefix">NT$</span>200</div></div>
-  </div>
-</div>
-
-<section class="reviews">
-  <div class="section-heading">客人好評推薦</div>
-
-  <div class="review-card">
-    <p>第一次接睫毛很怕太濃，但芊光做出來很自然，素顏也看起來有精神。</p>
-    <span>— 羅東客人分享</span>
-  </div>
-
-  <div class="review-card">
-    <p>生完小孩後每天都睡不飽，接完睫毛早上真的省很多時間，整個人看起來比較亮。</p>
-    <span>— 新手媽媽回饋</span>
-  </div>
-
-  <div class="review-card">
-    <p>環境很安靜舒服，操作也很細心，不會有壓迫感，是會想再回訪的美睫工作室。</p>
-    <span>— 宜蘭客人推薦</span>
-  </div>
-</section>
-
-<section class="seo-area">
-  <div class="section-heading">關於芊光</div>
-  <p>
-    如果妳正在找羅東美睫、宜蘭接睫毛、羅東日系美睫或羅東火車站附近的美睫工作室，
-    芊光 Studio 以自然感、輕盈感與日常耐看為主要設計方向，適合喜歡乾淨妝感、想節省早晨化妝時間，
-    或希望素顏也能看起來更有精神的妳。
-  </p>
-</section>
-
-<footer>
-  <span class="footer-diamond">◇</span>
-  <p class="footer-tagline">以睫毛為筆　描繪屬於你的輪廓之美</p>
-  <p class="footer-contact">
-    預約請加入 LINE <strong>@924pugwt</strong><br>
-    更多作品請見 IG <strong>qianglow.studio</strong>
-  </p>
-</footer>
-
-<a class="booking-button" href="https://line.me/R/ti/p/@924pugwt" target="_blank">
+<a class="booking-button" href="https://lin.ee/WfphLRG" target="_blank">
   立即預約 LINE
 </a>
-
-</div>
-
-<script>
-const tabs = document.querySelectorAll(".tab");
-const panels = document.querySelectorAll(".panel");
-
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    const target = tab.dataset.panel;
-
-    tabs.forEach(t => t.classList.remove("active"));
-    panels.forEach(p => p.classList.remove("active"));
-
-    tab.classList.add("active");
-    document.getElementById("panel-" + target).classList.add("active");
-  });
-});
-</script>
 
 </body>
 </html>
