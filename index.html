@@ -102,8 +102,8 @@ margin-bottom:18px;
 
 .hero h1{
 font-family:"Noto Serif TC",serif;
-font-size:54px;
-line-height:1.45;
+font-size:42px;
+line-height:1.6;
 font-weight:700;
 margin:0 0 28px;
 color:#2d2721;
@@ -138,16 +138,25 @@ font-size:15px;
 background:#fffaf6;
 color:#6e6258;
 }
-
 .hero-image{
+position:relative;
 border-radius:34px;
 overflow:hidden;
 background:#ece4da;
 min-height:620px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#9d8f82;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 1.5s ease;
+}
+
+.slide.active{
+opacity:1;
 }
 
 /* QUOTE */
@@ -407,9 +416,9 @@ LUODONG JAPANESE LASH STUDIO
 </div>
 
 </div>
-
 <div class="hero-image">
-空間照 / 情緒照位置
+  <img src="space-01.jpg" class="slide active">
+  <img src="space-02.jpg" class="slide">
 </div>
 
 </div>
@@ -544,6 +553,22 @@ SERVICES
 © Qianglow Studio
 </div>
 </footer>
+<script>
 
+const slides = document.querySelectorAll('.slide');
+
+let current = 0;
+
+setInterval(() => {
+
+slides[current].classList.remove('active');
+
+current = (current + 1) % slides.length;
+
+slides[current].classList.add('active');
+
+}, 4000);
+
+</script>
 </body>
 </html>
