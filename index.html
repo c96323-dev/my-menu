@@ -166,6 +166,42 @@ color:#2d2721;
 }
 
 /* REVIEW */
+.review-section{
+padding-top:120px;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:48px;
+}
+
+.review-card{
+border-radius:32px;
+overflow:hidden;
+background:#fff;
+border:1px solid #ece5de;
+}
+
+.review-card img{
+width:100%;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.review-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.review-section{
+padding-top:80px;
+}
+
 
 .review{
   padding:42px 0 78px;
@@ -477,7 +513,34 @@ margin-bottom:24px;
 
   </div>
 </section>
+<section class="section review-section">
 
+<div class="section-label">
+CLIENT VOICES
+</div>
+
+<h2 class="section-heading">
+來過芊光的人，
+怎麼形容這裡？
+</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+<img src="review-01.PNG" alt="芊光客人評價">
+</div>
+
+<div class="review-card">
+<img src="review-02.PNG" alt="芊光客人評價">
+</div>
+
+<div class="review-card">
+<img src="review-03.JPG" alt="芊光客人評價">
+</div>
+
+</div>
+
+</section>
 <section class="review">
   <div class="wrap">
     <div class="review-card">
