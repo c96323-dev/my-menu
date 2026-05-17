@@ -1,590 +1,549 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="wqdL218sYdU1q4BheLxD8_di-xCs4kCgVFkvxeDWwJU" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>芊光Qianglow｜宜蘭羅東日式美睫・睫毛管理・自然感嫁接</title><meta name="description" content="芊光 Studio 位於宜蘭羅東火車站附近，提供一對一完全預約制的日式美睫與睫毛管理服務。專注自然、耐看、有精神的眼神設計，適合新手媽媽與喜歡日系自然感的妳。">
-<meta name="keywords" content="羅東美睫, 宜蘭接睫毛, 羅東日式美睫, 羅東睫毛管理, 芊光Studio, Qianglow">
+
+<title>芊光 Studio｜宜蘭羅東日式美睫・睫毛管理</title>
+
+<meta name="description" content="芊光 Studio 位於宜蘭羅東火車站附近，提供一對一完全預約制的日式美睫與睫毛管理服務。專注自然、耐看、有精神的眼神設計。">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#f6f1ea;
-  --card:#fbf8f3;
-  --text:#2d2721;
-  --sub:#8d7d6d;
-  --line:rgba(120,100,80,.18);
-  --line-strong:rgba(120,100,80,.32);
-  --btn:#342a22;
-  --gold:#c8a96b;
+
+*{
+box-sizing:border-box;
 }
-html{scroll-behavior:smooth}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:"Noto Serif TC",serif;
-  letter-spacing:.0;
-  line-height:1.9;
+margin:0;
+background:#f7f2ec;
+color:#3a332d;
+font-family:"Noto Sans TC",sans-serif;
+line-height:1.95;
+letter-spacing:.02em;
 }
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.wrap{
+width:100%;
+max-width:1180px;
+margin:0 auto;
+padding:0 24px;
+}
+
+/* NAV */
+
 .nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(246,241,234,.88);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(12px);
+background:rgba(247,242,236,.82);
+border-bottom:1px solid rgba(120,100,80,.08);
 }
+
 .nav-inner{
-  max-width:1180px;
-  margin:auto;
-  padding:14px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
 }
-.nav-logo{
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-  color:var(--text);
-  text-decoration:none;
+
+.logo{
+font-family:"Noto Serif TC",serif;
+font-size:22px;
+color:#2d2721;
 }
+
 .nav-links{
-  display:flex;
-  gap:18px;
-  overflow-x:auto;
-  white-space:nowrap;
+display:flex;
+gap:28px;
+font-size:15px;
+color:#6b6259;
 }
-.nav-links a{
-  color:var(--sub);
-  text-decoration:none;
-  font-size:12px;
-  letter-spacing:.16em;
-}
-.page{
-  max-width:1180px;
-  margin:auto;
-  padding:22px 22px 120px;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:36px;
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.06);
-}
+
+/* HERO */
+
 .hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:720px;
+padding:110px 0 90px;
 }
-.hero-slider{
-  position:relative;
-  min-height:720px;
-  overflow:hidden;
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:64px;
+align-items:center;
 }
-.hero-slider img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity 1.4s ease;
+
+.hero-sub{
+font-size:13px;
+letter-spacing:.18em;
+color:#9b8d80;
+margin-bottom:18px;
 }
-.hero-slider img.active{opacity:1}
-.hero-content{
-  padding:72px 68px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+
+.hero h1{
+font-family:"Noto Serif TC",serif;
+font-size:54px;
+line-height:1.45;
+font-weight:700;
+margin:0 0 28px;
+color:#2d2721;
 }
-.brand-cn{
-  font-size:13px;
-  letter-spacing:.38em;
-  color:var(--sub);
-  margin-bottom:10px;
-}
-.brand-en{
-  font-family:"Cormorant Garamond",serif;
-  font-size:74px;
-  font-weight:300;
-  line-height:1;
-  margin-bottom:30px;
-}
-.hero-title{
-  font-size:30px;
-  font-weight:400;
-  line-height:1.8;
-  margin-bottom:24px;
-}
+
 .hero-text{
-  font-size:14px;
-  color:var(--sub);
-  line-height:2.2;
-  letter-spacing:.02em;
-word-break:normal;
-  margin-bottom:30px;
+font-size:18px;
+color:#5f564e;
+max-width:560px;
+margin-bottom:38px;
 }
-.hero-note{
-  font-size:12px;
-  letter-spacing:.2em;
-  color:#b3a392;
+
+.hero-btns{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
 }
-.content{padding:70px}
+
+.btn-dark{
+background:#342822;
+color:#fff;
+padding:16px 34px;
+border-radius:999px;
+font-size:15px;
+}
+
+.btn-light{
+border:1px solid #d8cec4;
+padding:16px 34px;
+border-radius:999px;
+font-size:15px;
+background:#fffaf6;
+color:#6e6258;
+}
+
+.hero-image{
+border-radius:34px;
+overflow:hidden;
+background:#ece4da;
+min-height:620px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#9d8f82;
+}
+
+/* QUOTE */
+
+.quote{
+padding:20px 0 90px;
+}
+
+.quote-box{
+background:#fbf8f4;
+border:1px solid rgba(120,100,80,.12);
+border-radius:32px;
+padding:42px;
+}
+
+.quote-text{
+font-family:"Noto Serif TC",serif;
+font-size:28px;
+line-height:1.8;
+margin-bottom:16px;
+}
+
+.quote-from{
+font-size:14px;
+color:#9b8d80;
+}
+
+/* SERVICES */
+
 .section{
-  margin-bottom:78px;
-  scroll-margin-top:90px;
+padding:80px 0;
 }
+
+.section-sub{
+font-size:13px;
+letter-spacing:.18em;
+color:#9b8d80;
+margin-bottom:18px;
+}
+
 .section-title{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  margin-bottom:32px;
-  font-size:15px;
-  letter-spacing:.12em;
+font-family:"Noto Serif TC",serif;
+font-size:42px;
+line-height:1.5;
+margin:0 0 18px;
 }
-.section-title::after{
-  content:"";
-  flex:1;
-  height:1px;
-  background:var(--line-strong);
+
+.section-text{
+max-width:640px;
+font-size:17px;
+color:#5a5148;
+margin-bottom:48px;
 }
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:36px;
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 }
-.menu-box{
-  border-top:1px solid var(--line-strong);
-  padding-top:22px;
+
+.service-card{
+background:#fbf8f4;
+border:1px solid rgba(120,100,80,.14);
+border-radius:28px;
+padding:32px;
 }
-.menu-subtitle{
-  color:var(--sub);
-  margin-bottom:16px;
-  font-size:14px;
-  letter-spacing:.18em;
+
+.service-card h3{
+font-family:"Noto Serif TC",serif;
+font-size:26px;
+margin:0 0 14px;
 }
-.row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:14px 0;
-  border-bottom:1px solid var(--line);
+
+.service-card p{
+font-size:16px;
+color:#5f564e;
+margin:0 0 14px;
 }
-.row-price{
-  font-family:"Cormorant Garamond",serif;
-  font-size:19px;
-  color:var(--sub);
-  white-space:nowrap;
+
+.fit{
+font-size:14px;
+color:#9b8d80;
 }
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+
+/* JOURNAL */
+
+.journal-card{
+background:#fbf8f4;
+border-radius:32px;
+padding:42px;
+border:1px solid rgba(120,100,80,.14);
 }
-.gallery img{
-  width:100%;
-  aspect-ratio:4/5;
-  object-fit:cover;
-  border-radius:22px;
+
+.journal-number{
+font-size:14px;
+letter-spacing:.18em;
+color:#9b8d80;
+margin-bottom:16px;
 }
-.fit-list{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
+
+.journal-card h3{
+font-family:"Noto Serif TC",serif;
+font-size:34px;
+line-height:1.6;
+margin:0 0 18px;
 }
-.fit-item{
-  padding:18px 20px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(255,255,255,.42);
-  font-size:14px;
-  color:var(--sub);
+
+.journal-card p{
+font-size:17px;
+color:#5f564e;
+margin-bottom:28px;
 }
-.review-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+
+/* CTA */
+
+.cta{
+padding:100px 0 120px;
+text-align:center;
 }
-.review-card{
-  background:rgba(255,255,255,.58);
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:28px;
+
+.cta h2{
+font-family:"Noto Serif TC",serif;
+font-size:42px;
+line-height:1.7;
+margin-bottom:24px;
 }
-.review-top{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  margin-bottom:18px;
+
+.cta p{
+max-width:620px;
+margin:0 auto 36px;
+color:#5f564e;
 }
-.review-avatar{
-  width:72px;
-  height:72px;
-  border-radius:999px;
-  object-fit:cover;
-}
-.stars{
-  color:var(--gold);
-  font-size:14px;
-  letter-spacing:.12em;
-  margin-bottom:6px;
-}
-.review-name{
-  font-size:12px;
-  color:var(--sub);
-  letter-spacing:.14em;
-}
-.review-card p,
-.about,
-.faq p,
-.seo-text,
-.ig-box p{
-  font-size:14px;
-  line-height:2;
-  color:var(--sub);
-  letter-spacing:.02em;
-  word-break:normal;
-}
-.faq{
-  display:grid;
-  gap:18px;
-}
-.faq-item{
-  padding:24px 26px;
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:rgba(255,255,255,.45);
-}
-.faq h3{
-  font-size:15px;
-  font-weight:400;
-  margin-bottom:10px;
-  letter-spacing:.12em;
-}
-.map-wrap{
-  overflow:hidden;
-  border-radius:26px;
-  border:1px solid var(--line);
-}
-.map-wrap iframe{
-  width:100%;
-  height:360px;
-  border:0;
-  display:block;
-}
-.ig-box{
-  padding:18px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:rgba(255,255,255,.48);
-  text-align:center;
-}
-.ig-link{
-  display:inline-block;
-  margin-top:16px;
-  color:var(--text);
-  text-decoration:none;
-  border-bottom:1px solid var(--line-strong);
-  padding-bottom:4px;
-  letter-spacing:.12em;
-}
+
+/* FOOTER */
+
 .footer{
-  padding-top:42px;
-  border-top:1px solid var(--line);
-  text-align:center;
-}
-.footer-diamond{
-  color:#bcae9e;
-  margin-bottom:16px;
-}
-.footer-tagline{
-  font-size:13px;
-  color:var(--sub);
-  letter-spacing:.2em;
-  margin-bottom:18px;
-}
-.footer-contact{
-  font-size:13px;
-  color:var(--sub);
-  line-height:2;
-}
-.footer-contact strong{color:var(--text)}
-.booking-button{
-  position:fixed;
-  left:20px;
-  right:20px;
-  bottom:18px;
-  max-width:420px;
-  margin:auto;
-  background:var(--btn);
-  color:white;
-  text-decoration:none;
-  text-align:center;
-  padding:16px;
-  border-radius:999px;
-  font-size:14px;
-  letter-spacing:.18em;
-  z-index:999;
-  box-shadow:0 14px 36px rgba(0,0,0,.18);
-}
-@media(max-width:860px){
-  .nav-inner{padding:12px 14px}
-  .nav-links{gap:14px}
-  .page{padding:14px 12px 110px}
-  .card{border-radius:28px}
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-slider{min-height:500px}
-  .hero-content{padding:42px 28px}
-  .brand-en{font-size:52px}
-  .hero-title{font-size:24px}
-  .content{padding:42px 28px}
-  .menu-grid,
-  .review-grid,
-  .fit-list{grid-template-columns:1fr}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-}
-  .map-button-wrap{
-  margin-top:22px;
-  text-align:center;
+padding:42px 0;
+border-top:1px solid rgba(120,100,80,.1);
+font-size:14px;
+color:#9b8d80;
 }
 
-.map-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 28px;
-  border-radius:999px;
-  background:#342a22;
-  color:#fff;
-  text-decoration:none;
-  letter-spacing:.16em;
-  font-size:12px;
-  transition:.25s;
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+gap:42px;
 }
 
-.map-button:hover{
-  opacity:.88;
+.hero{
+padding:72px 0 64px;
 }
 
-.instagram-card{
-  padding:52px 28px;
-  border:1px solid var(--line);
-  border-radius:32px;
-  background:rgba(255,255,255,.55);
-  text-align:center;
+.hero h1{
+font-size:34px;
+line-height:1.65;
 }
 
-.instagram-text{
-  color:var(--sub);
-  font-size:14px;
-  line-height:2.1;
-  margin-bottom:26px;
+.hero-text{
+font-size:16px;
+line-height:2;
 }
 
+.hero-image{
+min-height:420px;
+}
+
+.quote-text{
+font-size:22px;
+line-height:1.9;
+}
+
+.section-title{
+font-family:"Noto Serif TC",serif;
+font-size:32px;
+line-height:1.6;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.service-card h3{
+font-size:22px;
+}
+
+.journal-card h3{
+font-size:28px;
+line-height:1.7;
+}
+
+.cta h2{
+font-size:32px;
+line-height:1.8;
+}
+
+.nav-links{
+gap:16px;
+font-size:14px;
+overflow:auto;
+}
+
+}
 
 </style>
 </head>
+
 <body>
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#home" class="nav-logo">Qianglow</a>
-    <div class="nav-links">
-      <a href="#menu">服務</a>
-      <a href="services.html">服務項目</a>
-      <a href="#gallery">作品</a>
-      <a href="#review">好評</a>
-      <a href="#faq">FAQ</a>
-      <a href="journal.html">Journal</a>
-      <a href="#map">地圖</a>
-      <a href="#ig">IG</a>
-    </div>
-  </div>
-</nav>
-<div class="page">
-<div class="card">
-<section class="hero" id="home">
-  <div class="hero-slider">
-    <img src="space-01.JPG" class="active" alt="芊光 Studio 空間照">
-    <img src="space-02.jpg" alt="芊光 Studio 空間照">
-  </div>
-  <div class="hero-content">
-   <p class="brand-cn">
-羅東日式美睫・睫毛管理
-</p>
-    <h1 class="brand-en">Qianglow</h1>
-    <h2 class="hero-title">
-每天都在照顧別人的妳<br>
-今天先溫柔一點對待自己
-</h2>
-<p class="hero-text">
-位於羅東火車站附近的一對一日式美睫工作室<br>
-專注自然、耐看、有精神的眼神設計
-</p><p class="hero-note">
-Natural Lash ｜ Private Studio ｜ Luodong
-</p>
-  </div>
-</section>
-<div class="content">
-<section class="section" id="menu">
-  <div class="section-title">服務價目</div>
-  <div class="menu-grid">
-    <div class="menu-box">
-      <div class="menu-subtitle">日系單根美睫</div>
-      <div class="row"><span>裸妝素顏款</span><span class="row-price">NT$1,000</span></div>
-      <div class="row"><span>日常自然款</span><span class="row-price">NT$1,100</span></div>
-      <div class="row"><span>立體顯眼款</span><span class="row-price">NT$1,200</span></div>
-      <div class="row"><span>濃郁存在款</span><span class="row-price">NT$1,300</span></div>
-    </div>
-    <div class="menu-box">
-      <div class="menu-subtitle">睫毛管理</div>
-      <div class="row"><span>水光睫毛管理</span><span class="row-price">NT$1,300</span></div>
-      <div class="row"><span>野生眉雕塑</span><span class="row-price">NT$1,000</span></div>
-    </div>
-    <div class="menu-box">
-      <div class="menu-subtitle">卸除</div>
-      <div class="row"><span>本店續接</span><span class="row-price">Free</span></div>
-      <div class="row"><span>他店續接</span><span class="row-price">NT$200</span></div>
-    </div>
-    <div class="menu-box">
-      <div class="menu-subtitle">加購項目</div>
-      <div class="row"><span>野生眉雕塑</span><span class="row-price">NT$800</span></div>
-      <div class="row"><span>局部彩睫</span><span class="row-price">NT$100</span></div>
-      <div class="row"><span>全眼彩睫</span><span class="row-price">NT$200</span></div>
-    </div>
-  </div>
-</section>
-<section class="section" id="gallery">
-  <div class="section-title">作品展示</div>
-  <div class="gallery">
-    <img src="lash-01.JPG" alt="羅東美睫作品">
-    <img src="lash-02.JPG" alt="日系美睫作品">
-    <img src="lash-03.JPG" alt="自然感睫毛作品">
-    <img src="lash-04.JPG" alt="宜蘭美睫作品">
-  </div>
-</section>
-<section class="section">
-  <div class="section-title">適合妳嗎</div>
-  <div class="fit-list">
-    <div class="fit-item">✓ 喜歡自然感、乾淨妝感</div>
-    <div class="fit-item">✓ 想素顏也看起來有精神</div>
-    <div class="fit-item">✓ 早上想少花一點時間整理</div>
-    <div class="fit-item">✓ 不喜歡太濃、太有妝感的睫毛</div>
-  </div>
-</section>
-<section class="section" id="review">
-  <div class="section-title">客人好評回饋</div>
-  <div class="review-grid">
-    <div class="review-card">
-      <div class="review-top">
-        <img src="review-01.PNG" class="review-avatar">
-        <div><div class="stars">★★★★★</div><span class="review-name">新手媽媽回饋</span></div>
-      </div>
-      <p>生完小孩後每天都睡不飽，接完睫毛早上真的省很多時間。</p>
-    </div>
-    <div class="review-card">
-      <div class="review-top">
-        <img src="review-02.PNG" class="review-avatar">
-        <div><div class="stars">★★★★★</div><span class="review-name">羅東客人分享</span></div>
-      </div>
-      <p>第一次接睫毛很怕太濃，但芊光做出來很自然，素顏也看起來有精神。</p>
-    </div>
-    <div class="review-card">
-      <div class="review-top">
-        <img src="review-03.JPG" class="review-avatar">
-        <div><div class="stars">★★★★★</div><span class="review-name">宜蘭客人推薦</span></div>
-      </div>
-      <p>環境很安靜舒服，操作也很細心，是會想再回訪的美睫工作室。</p>
-    </div>
-  </div>
-</section>
-<section class="section" id="faq">
-  <div class="section-title">FAQ</div>
-  <div class="faq">
-    <div class="faq-item">
-      <h3>第一次接睫毛適合嗎？</h3>
-      <p>很適合。芊光會依照妳的眼型、原生睫毛狀態與日常習慣調整，不會一開始就做太濃</p>
-    </div>
-    <div class="faq-item">
-      <h3>接完會不會看起來很有妝感？</h3>
-      <p>芊光主打自然、乾淨、耐看的日系美睫，重點是讓妳素顏看起來更有精神</p>
-    </div>
-    <div class="faq-item">
-      <h3>接睫毛可以碰水嗎？</h3>
-      <p>操作當天可依照現場保養建議照顧，日常避免大力搓揉眼睛，能讓睫毛維持更漂亮</p>
-    </div>
-    <div class="faq-item">
-      <h3>地點在哪裡？</h3>
-      <p>宜蘭縣羅東鎮安平路35號2樓</p>
-    </div>
-  </div>
-</section>
-<section class="section" id="map">
-  <div class="section-title">Google 地圖</div>
-  <div class="map-wrap">
-  <iframe src="https://www.google.com/maps?q=宜蘭縣羅東鎮安平路35號&output=embed" loading="lazy"></iframe>
- <div class="map-button-wrap">
-  <a class="map-button" href="https://maps.app.goo.gl/6VkabM9q2Lr9Zyg3A?g_st=ic" target="_blank">
-    查看 Google 地圖
-  </a>
+
+<header class="nav">
+<div class="wrap nav-inner">
+
+<div class="logo">
+芊光 Studio
 </div>
-  </div>
-</section>
-<section class="section" id="ig">
-  <div class="section-title">Instagram</div>
 
-  <div class="instagram-card">
+<nav class="nav-links">
+<a href="about.html">About</a>
+<a href="services.html">服務項目</a>
+<a href="journal.html">Journal</a>
+<a href="faq.html">FAQ</a>
+</nav>
 
-    <p class="instagram-text">
-      更多作品、日常紀錄與預約資訊<br>
-      歡迎來到芊光 Studio
-    </p>
-<a class="map-button"
-  href="https://www.instagram.com/qianglow.studio?igsh=dDNobW11bDV2NW9m&utm_source=qr"
-  target="_blank">
+</div>
+</header>
 
-  查看更多作品
+<section class="hero">
+<div class="wrap hero-grid">
 
+<div>
+
+<div class="hero-sub">
+LUODONG JAPANESE LASH STUDIO
+</div>
+
+<h1>
+每天都在照顧別人的妳，
+今天先溫柔一點對待自己。
+</h1>
+
+<p class="hero-text">
+位於羅東火車站附近的一對一日式美睫工作室。
+專注自然、耐看、有精神的眼神設計，
+適合喜歡日系自然感與新手媽媽族群。
+</p>
+
+<div class="hero-btns">
+<a class="btn-dark" href="https://lin.ee/WfphLRG">
+立即預約
 </a>
 
-  </div>
+<a class="btn-light" href="services.html">
+查看服務項目
+</a>
+</div>
+
+</div>
+
+<div class="hero-image">
+空間照 / 情緒照位置
+</div>
+
+</div>
 </section>
+
+<section class="quote">
+<div class="wrap">
+
+<div class="quote-box">
+
+<div class="quote-text">
+「第一次接睫毛，
+但完全沒有不舒服的感覺。」
+</div>
+
+<div class="quote-from">
+— 產後媽媽 / 羅東
+</div>
+
+</div>
+
+</div>
+</section>
+
 <section class="section">
-  <div class="section-title">關於芊光</div>
-  <p class="about">
-    如果妳正在找羅東美睫、宜蘭接睫毛、羅東日系美睫或羅東睫毛管理，
-    芊光 Studio 以自然感、輕盈感與日常耐看為主要設計方向，
-    適合喜歡乾淨妝感、希望素顏也能看起來更有精神的妳。
-  </p>
+<div class="wrap">
+
+<div class="section-sub">
+SERVICES
+</div>
+
+<h2 class="section-title">
+自然感睫毛設計
+</h2>
+
+<p class="section-text">
+不是追求濃妝感，
+而是讓妳在忙碌生活裡，
+素顏也能保有乾淨、有精神的眼神。
+</p>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>裸妝素顏款</h3>
+<p>自然日常款，輕盈裸感。</p>
+<div class="fit">
+適合：不想被看出有接睫毛的人
+</div>
+</div>
+
+<div class="service-card">
+<h3>日常自然款</h3>
+<p>清透微妝感，最受歡迎款式。</p>
+<div class="fit">
+適合：上班通勤、素顏也想有精神
+</div>
+</div>
+
+<div class="service-card">
+<h3>立體顯眼款</h3>
+<p>眼神更明亮有神，修飾感更明顯。</p>
+<div class="fit">
+適合：想放大眼神但不想太濃
+</div>
+</div>
+
+<div class="service-card">
+<h3>睫毛管理</h3>
+<p>使用原生睫毛打造自然弧度。</p>
+<div class="fit">
+適合：不喜歡異物感、偏好自然派
+</div>
+</div>
+
+</div>
+
+</div>
 </section>
+
 <section class="section">
-  <p class="seo-text">羅東美睫｜宜蘭接睫毛｜羅東日系美睫｜羅東睫毛管理</p>
+<div class="wrap">
+
+<div class="journal-card">
+
+<div class="journal-number">
+01
+</div>
+
+<h3>
+宜蘭新手媽媽適合接睫毛嗎？
+</h3>
+
+<p>
+很多新手媽媽不是想變濃妝，
+而是希望在睡不飽、時間不夠的早晨，
+素顏也能看起來比較有精神。
+</p>
+
+<a class="btn-light" href="journal.html">
+閱讀 Journal
+</a>
+
+</div>
+
+</div>
 </section>
+
+<section class="cta">
+<div class="wrap">
+
+<h2>
+讓每天都很忙的妳，
+也能保有一點自己的光。
+</h2>
+
+<p>
+芊光 Studio 提供一對一完全預約制服務，
+希望每位來到這裡的客人，
+都能在安靜放鬆的空間裡慢慢休息。
+</p>
+
+<a class="btn-dark" href="https://lin.ee/WfphLRG">
+立即預約 LINE
+</a>
+
+</div>
+</section>
+
 <footer class="footer">
-  <div class="footer-diamond">◇</div>
-  <p class="footer-tagline">以睫毛為筆　描繪屬於妳的輪廓之美</p>
-  <p class="footer-contact">
-    預約請加入 LINE <strong>@924pugwt</strong><br>
-    更多作品請見 IG <strong>qianglow.studio</strong>
-  </p>
+<div class="wrap">
+© Qianglow Studio
+</div>
 </footer>
-</div>
-</div>
-</div>
-<a class="booking-button" href="https://lin.ee/WfphLRG" target="_blank">立即預約 LINE</a>
-<script>
-const heroImages = document.querySelectorAll(".hero-slider img");
-let current = 0;
-setInterval(() => {
-  heroImages[current].classList.remove("active");
-  current = (current + 1) % heroImages.length;
-  heroImages[current].classList.add("active");
-}, 3500);
-</script>
+
 </body>
 </html>
